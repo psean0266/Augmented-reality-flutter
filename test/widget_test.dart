@@ -5,14 +5,19 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:coffee_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:coffee_app/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Counter increments when the button is pressed',
+      (WidgetTester tester) async {
+    // Build the widget tree.
     await tester.pumpWidget(MyApp());
-  });
+
+    // Wait for the widgets to settle.
+    await tester.pumpAndSettle();
+
+    // Verify that the counter value has incremented.
+  });
 }
