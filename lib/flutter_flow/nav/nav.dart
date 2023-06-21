@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:coffee_app/after-login/after-login.dart';
+import 'package:coffee_app/reality/teste-file.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
-
+import 'package:coffee_app/reality/reality.dart';
 import '../../index.dart';
 import '../../main.dart';
 import '../lat_lng.dart';
@@ -61,7 +62,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'AfterLoginPage',
               path: 'AfterLoginPage/:token',
               builder: (context, params) => AfterLogin(),
-            )
+            ),
+            FFRoute(
+              name: 'ArPage',
+              path: 'arPage',
+              builder: (context, params) => TestPageWidget(),
+            ),
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
       ],

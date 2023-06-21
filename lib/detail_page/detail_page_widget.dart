@@ -286,7 +286,15 @@ class _DetailPageWidgetState extends State<DetailPageWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          context.pushNamed(
+                            'ArPage',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.leftToRight,
+                              ),
+                            },
+                          );
                         },
                         text: 'Visualize in an environment',
                         options: FFButtonOptions(
